@@ -1,0 +1,30 @@
+{% extends 'store/layouts/main.html' %}
+{% block content %}
+{% include 'store/inc/slider.html' %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">Trending Products</h3>
+            <hr>
+            <div class="row justify-content-center">
+                {% for item in trending_products %}
+                <div class="col-md-3 mb-4 d-flex align-item-stretch">
+                    <div class="card text-center">
+                        <a href="{% url 'productview'  item.category.slug item.slug %}">
+                            <div class="card-body">
+                                <div class="category-image">
+                                    <img src="{{ item.product_image.url}}" alt="img" class="w-100">
+                                </div>
+                                <h4 class="text-center mt-3">{{ item.name }}</h4>
+                                <span class="text-muted">{{ item.selling_price }}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% load static %}
+
+<head xmlns="">
+    {% comment %} jquery  {% endcomment %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<!-- CSS -->
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+<!-- Default theme -->
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!-- SWEETALERT CSS -->
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- SWEETALERT JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+
+    <meta name="referrer" content="np-referrer-when-downgrade">
+
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .product-viewtag{
+        background-color:green;
+        color: white;
+        font-size: 11px;
+        line-height: 1;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top:15px;
+        margin-left:200px;
+        padding: 5px 7px;
+        font-weight: 700;
+        min-width:80px;
+    }
+
+</style>
+</head>
+
+<body>
+{% include 'store/inc/navbar.html' %}
+
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+<script>
+    alertify.set('notifier','position', 'top-right');
+    {%for msg in messages%}
+    alertify.success('{{msg}}');
+    {%endfor%}
+</script>
+
+{% block content %}
+{% endblock %}
+
+
+<a href="//wa.me/+919074064306?text=I'm%20intrested%20in%20your%20Books%20for%20sale" target="_blank">
+    <img src="{% static 'images/img.png'%}" alt="img" width="60px">
+</a>
+
+{% comment %} checkout js {% endcomment %}
+<script src="{% static '/js/checkout.js' %}"></script>
+
+{% comment %} jquery  {% endcomment %}
+<script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+
+{% comment %} Custom  {% endcomment %}
+<script src="{% static 'js/custom.js' %}"></script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/694e34599053fb197ca43dc3/1jdcnovlo';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
